@@ -40,8 +40,8 @@ function initMap() {
         map.remove();
     }
 
-    // Create a new Leaflet map instance
-    map = L.map('map').setView([18.42655509420844, -64.61262353817847], 10);
+    // Create a new Leaflet map instance, center the map and zoom so that all nodes are visible
+    map = L.map('map').setView([18.44730228957937, -64.53116191909692], 10);
 
     // Add a base layer to the map
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

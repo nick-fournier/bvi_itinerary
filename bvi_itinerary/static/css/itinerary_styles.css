@@ -48,7 +48,7 @@ body {
     #details {
         height: 100%; /* Ensure details takes full height */
         overflow-y: auto; /* Enable scrolling */
-        margin-bottom: 10px;
+        margin-bottom: 18px;
     }
 
     #totals {
