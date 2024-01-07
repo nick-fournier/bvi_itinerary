@@ -4,7 +4,7 @@ import os
 
 # Read routing.json data
 DATA_PATH = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), 'static/stops.json')
+    os.path.dirname(os.path.abspath(__file__)), 'fixtures/stops.json')
 
 with open(DATA_PATH) as f:    
     MAP_DATA = json.load(f)
