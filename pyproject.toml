@@ -1,0 +1,11 @@
+[project]
+name = "bvi_itinerary"
+version = "0.1.0"
+description = "An interactive bareboat itinerary in the BVIs."
+authors = [
+    { name = "Nicholas Fournier" }
+]
+
+[build-system]
+requires = ['setuptools>=61.0', 'wheel']
+build-backend = 'setuptools.build_meta:__legacy__'

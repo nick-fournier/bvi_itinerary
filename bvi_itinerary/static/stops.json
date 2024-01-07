@@ -1,0 +1,158 @@
+{
+    "Base": {
+        "coords": [
+            18.42655509420844,
+            -64.61262353817847
+        ],
+        "mandatory": true,
+        "next": [
+            "Norman Island",
+            "Peter Island",
+            "Cooper Island"
+        ]
+    },
+    "Norman Island": {
+        "coords": [
+            18.31695926345994,
+            -64.61828416998526
+        ],
+        "anchorages": [
+            "The Bight Bay",
+			"Benures Bay",
+			"Soldier Bay"
+        ],
+        "next": [
+            "Base",
+            "Peter Island",
+            "Cooper Island",
+            "Virgin Gorda (South)"
+        ],
+        "description": "Thought to be the inspiration for Robert Louis Stevenson's Treasure Island, a protected cove and views of most of the BVI and USVI from its hilltops, it is easy to imagine a pirate lair on the island. Today, it has lively restaurants, a nice beach, great snorkeling, hiking with spectacular vistas and multiple anchorage options. The Bight has a well protected and large mooring field. From the Bight,  it is a quick dinghy ride in to Pirate's Bight Restaurant  or the floating Willy T, a rusty old frigate turned floating restaurant and bar. \n\nOn shore, Pirate's Bight has a sandy beach with chaises for those who purchase a cocktail or bite. Sunsets are especially beautiful from this beach. Beginning  snorkelers can enter the water directly off the beach with nice coral formations to the the left and a grassy field that attracts turtles and rays to the right. More experienced snorkelers and divers will enjoy exploring the Caves to the west of The Bight. There are Day Use Only mooring balls for vessels or dinghys just west of Treasure Point. Kelly Cove has a smaller mooring field to the east as you are entering the Bight, with nice snorkeling around Water Point. \n\nSome of the best snorkeling in the BVI is at the Indians to the northeast of the entrance to The Bight. It can sometimes become crowded with day trip snorkel boats. I recommend stopping first thing in the morning as you are leaving The Bight or later in the afternoon as you are heading into the Bight for the evening. There are Day Use Only mooring balls as well as a dinghy mooring line. It can be a bit rough but the snorkeling is spectacular. \n\nOn the eastern side of Norman Island are two anchor only coves with nice sandy bottoms, Benures Bay and Soldier Bay. Aside from the restaurants at the Bight, Norman Island is completely uninhabited. There are a series of trails that connect, the Bight, Soldier Bay, Benures Bay, Spyglass Point and Money Bay on the southeast side of the island. \n\nYou can access these trails by taking the dirt road between the Dive Shop and Pirate's Bight, where the road curves to the right, take the small trail to the left up the hill. At the top you can go right to Spyglass Hill and sweeping views of St. John, St. Thomas and on a clear day St. Croix. Going to the left takes you to Benures Bay, Solider Bay and Monkey Bay with views of Tortola and Peter Island. Make sure you take lots of water and sun protection."
+    },
+    "Peter Island": {
+        "coords": [
+            18.356711695044005,
+            -64.58143682035875
+        ],
+        "anchorages": [
+            "Great Harbor"
+        ],
+        "next": [
+			"Base",
+            "Cooper Island",
+            "Virgin Gorda (South)",
+            "Virgin Gorda (North)"
+        ],
+        "description": "Peter Island has 5 gorgeous white sand beaches and offers great snorkeling and swimming with turtles popping up throughout. Just off of Key Point you will find one of the newest dive sites, established in 2019, the sunken original Willy T. This an underwater pirate-themed shipwreck playground for divers, complete with skeletal pirates going about their daily business.\n"
+    },
+    "Cooper Island": {
+        "coords": [
+            18.38561379532964,
+            -64.51380970308847
+        ],
+        "anchorages": [
+            "Manchioneel Bay"
+        ],
+        "next": [
+            "Virgin Gorda (South)",
+            "Virgin Gorda (North)",
+            "North Tortola"
+        ],
+        "description": "Hit especially hard by Irma, they are diligently working to recover. Pusser's and Omar's are back and either make a nice lunch spot before heading on to Cooper Island for your last night in the BVI.  Another option would be to sail on to Salt Island, pick up a Day Use Only mooring ball and dinghy to the island. You can hike around the salt ponds, used to harvest salt in the 19th and early 20th century. \n\nYou can also dinghy over to Lee Bay and the Wreck of the Rhone. The Rhone was a steam ship that sank in a Hurricane in 1867. The water is pretty shallow making a great dive or snorkel. If you are looking for a quiet anchorage, Great Harbor on Peter Island is a good alternative to Cooper Island. As with Soper's Hole, Peter Island is slower to recover from Irma. In the southwestern corner of Great Harbour, Ocean's 7 Restaurant and Beach Bar has upgraded and reopened. \n\nCooper Island's mooring field sits above a large field of sea grass, the preferred  food for sea turtles, so there is a strict 'no anchoring' policy, but you can see dozens of them if you snorkel among the boats.  Cistern Point is at the southern end of mooring field. It is a beautiful snorkel spot and the sea turtle and ray sightings are frequent. On shore, Cooper Island Resort is an eco friendly, 100% solar powered facility with a beach bar, restaurant, ice cream/coffee shop, dive shop, rum bar, upscale gift shop and brewery."
+    },
+    "Virgin Gorda (South)": {
+        "coords": [
+            18.430392699437178,
+            -64.44536355783526
+        ],
+        "anchorages": [
+            "Virgin Gorda Yacht Harbor (slip)",
+            "Devils Bay",
+            "Valley Trunk",
+            "Spring Bay"
+        ],
+        "next": [
+            "Anegada",
+            "North Tortola",
+            "Virgin Gorda (North)"
+        ],
+        "description": "The Baths top most lists of the must see natural attractions of the BVI. The Baths are a 7 acre National Park on the southwest side of Virgin Gorda, between Devil's Bay and Spring Bay. Granite boulders spike out of the sand forming tidal pools, tunnels, arches and grottos. You can explore this natural wonder through an established trail. There are sandy white beaches on either side of the of these giant beauties and the snorkeling is excellent. There are a very limited number of Day Use Only mooring balls. \n\nThe Baths on the southern end of Virgin Gorda. After picking up a ball, visitors dinghy over to the buoy protected swim area, secure the dinghy to the mooring line and swim in. Depending upon the weather, there can be a strong current in this area adding complexity to the challenge of getting in and out of the dinghy from the water. Because of the popularity of the Baths, I recommend you leave your previous night's anchorage at first light and cruise directly to the Bath's mooring field to get a Day Use Only ball. \n\nAnother option is to anchor in St. Thomas Bay or rent a slip at Virgin Gorda Yacht Harbor and take a taxi. Virgin Gorda Yacht Harbor has 93 slips available for overnight and hourly rentals. You can grab an open air taxi to the Baths in the front of the Marina Area.\n\nA third option is to pick up a mooring ball at Leverick Bay and rent a car or take the Private Bath's Car Tour through Speedy's."
+    },
+    "East Tortola": {
+        "coords": [
+            18.427134515678052,
+            -64.6598021776346
+        ],
+        "overnight": true,
+        "anchorages": [
+            "Cane Garden Bay"
+        ],
+        "next": [
+            "Jost Van Dyke"
+        ],
+        "description": "Cane Garden Bay is located near the west end of Tortola. Sage Mountain soars above the wide sandy beach, creating a lush green backdrop for Cane Garden Bay. You can walk from one to the other, beach crawling to sample specialty rum drinks, pumpkin fritters, conch, and other Caribbean delights. Live music and ‘jump up’ is almost always available in one or more establishments. Quinto’s Gazebo, the Big Banana Paradise Club, Rhymer’s Beach Bar and Restaurant, and Indigo House. Myett’s Garden & Grille Restaurant, De Wedding, and the Elm Bar and Gift Shop all offer a variety of dining and shopping experiences. Behind the beach bars and restaurants are gift shops and a grocery store. \n\nAt the public docks you can get fuel, water and ice. Up the road to the north is the Callwood Rum Distillery. They have been making rum from sugar cane since the 1800's. When you visit, you get a bit of history and a bit of rum. The sunsets are stunning from Cane Garden Bay. As the Jimmy Buffett song claims, you can see the lights of St. Thomas in the evening. There is a large mooring field, so the people watching is great.  This spot is best enjoyed when the seas are relatively calm, north swells are especially uncomfortable here.\n\n"
+    },
+    "North Tortola": {
+        "coords": [
+            18.44730228957937,
+            -64.53116191909692
+        ],
+        "anchorages": [
+            "Marina Cay",
+            "Trellis Bay",
+            "Beef Island",
+            "Scrub Island",
+            "Guana Island"
+        ],
+        "next": [
+            "East Tortola",
+            "Jost Van Dyke"
+        ],
+        "description": "At the north end of Tortola is a collection of islands:\n\nMarina Cay is scenic and quiet, providing a sheltered anchorage nestled behind a protective reef. Cruising in Marina Cay waters brings you to the north end of Tortola and the smaller isles that bejewel its picturesque coast. take a dinghy from Marina Cay and try a restaurant named Donovan’s Reef.\n\nBeef Island is famous for its luxury resorts, bars, eccentric art galleries, crafts shops and of course, paradisiacal beaches. Trellis Bay is one of the most popular anchorages with a true yachtsmen vibe. The Trellis bay is a very well-protected and appealing harbor and offers a combination of nice restaurants, bars and water activities. However, Beef island is a stone’s throw away from Tortola and the airport.\n\nScrub Island has a beautiful and clean marina with pools, shops, and a restaurant.\n\nGuana island is a hidden gem in the BVI. Take a break at the White Bay and walk on the long stretch of white sandy beach. It is further west anc could be a stopover en route to Cane Garden Bay or Jost Van Dyke.\n"
+    },
+    "Virgin Gorda (North)": {
+        "coords": [
+            18.499066367038445,
+            -64.35881271850243
+        ],
+        "anchorages": [
+            "Long Bay",
+            "Leverick Bay"
+        ],
+        "next": [
+            "Anegada",
+            "North Tortola"
+        ],
+        "description": "The Dogs are an excellent snorkeling and diving site as with all National Parks, it is a cluster of three small islets. After lunch, onward up into the North Sound, being sure to use the well-marked north entrance and not the shortcut next to Mosquito Island. Your destination, Leverick Bay, has everything that a sailor or landlubber could want. The amenities include: a full service spa that can even accommodate you aboard, a complete marina, pool, restaurant, beach bar, live entertainment most nights, water sports, shopping, and a market for provisions plus a deli. In fact, there’s too much to list, definitely worth a stop over!\n\nThe uninhabited Prickly Pear Island is named after the opuntia cactus. This perfect Caribbean hideaway is surrounded by azure waters, and you can take a short hiking trail from Vixen Point. You will come across salt ponds and other secluded beaches. Don’t worry about staying hungry on this little island; there is a bar serving tasty lobsters.\n"
+    },
+    "Anegada": {
+        "coords": [
+            18.72325181567056,
+            -64.38551224840897
+        ],
+        "anchorages": null,
+        "next": [
+            "North Tortola",
+            "East Tortola",
+			"Jost Van Dyke"
+        ],
+        "description": "There is only one anchorage and make sure you go in between the red and green entry markers. By the time you’ve picked up one of the 30 mooring buoys, you and your crew will be ready to explore. Choose either a taxi or rented car for the day to visit Loblolly Bay, Cow Wreck and Anegada Beach Club. In addition to the beautiful white beaches, you will fall in love with the Roseate Flamingos, rare rock iguanas, manmade conch islands and splendid plant species like sea lavender. The fantastic outer reef, Horseshoe Reef, is rich in marine life and perfect for snorkeling or diving and dotted with shipwrecks.\nA sail to the island wouldn’t be complete without savoring the locally caught lobster. Potter’s by the Sea, Anegada Reef Hotel, and Wonky Dog are just a few of the dining possibilities. Not all of the businesses on Anegada accept credit cards, so plan on paying with cash, and be sure to make dinner reservations in advance.\n"
+    },
+    "Jost Van Dyke": {
+        "coords": [
+            18.44284718224135,
+            -64.7513312275871
+        ],
+        "anchorages": [
+            "Great Harbour",
+            "Diamond Bay",
+            "White Bay"
+        ],
+        "next": [
+            "East Tortola",
+            "Peter Island",
+            "Norman Island"
+        ],
+        "description": "The island is abundant in history and cultural mix, resulting in tasty and diverse dining options. This rather small (8 km2) island is the birthplace of the famous fruity Painkiller cocktail (created in the still-operating Soggy Dollar Bar in White Bay). \n\nLovers of nature can take a scenic hike into the rainforest above the Great Harbor. On the NE side of the island, don’t skip taking a swim in Bubbly Pool, a natural “hot tub”. If you have a party crew, don’t miss out on live music at Foxy’s Bar in Great Harbor. \n"
+    }
+}
