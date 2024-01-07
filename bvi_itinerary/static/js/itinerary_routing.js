@@ -5,8 +5,11 @@ const jsonString = JSON.parse(document.getElementById("map_data").textContent);
 // Parse the JSON string
 var graphData = JSON.parse(jsonString);
 
- // Function to fetch JSON data from a local file
- async function fetchJSONFile(filename) {
+let map; // Declare map variable at the beginning
+let selectedPath = [];
+
+// Function to fetch JSON data from a local file
+async function fetchJSONFile(filename) {
     const response = await fetch(filename);
     return response.json();
 }
@@ -27,13 +30,24 @@ function calculateDistance(coord1, coord2) {
 
 // Function to initialize the Leaflet Map
 function initMap() {
-    const map = L.map('map').setView([18.42655509420844, -64.61262353817847], 10);
 
+    // Check if the map already exists
+    let tempSelectedPath = [...selectedPath]; // Create a copy of selectedPath
+
+    // Check if the map already exists
+    if (map) {
+        // If it does, remove the existing map
+        map.remove();
+    }
+
+    // Create a new Leaflet map instance
+    map = L.map('map').setView([18.42655509420844, -64.61262353817847], 10);
+
+    // Add a base layer to the map
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    let selectedPath = [];
     let selectedNodes = new Set();
     let selectedLine;
 
@@ -164,6 +178,7 @@ function initMap() {
     }
 
     function updateMap(graphData, nodes, links, svg, map, selectedPath) {
+
         // Draw dotted links
         const link = svg.selectAll("line.dotted-line")
             .data(links)
@@ -192,34 +207,34 @@ function initMap() {
         node.on("click", clickNode);
 
         function update() {
-            link.attr("x1", d => map.latLngToLayerPoint(d.source.coords).x)
+                link.attr("x1", d => map.latLngToLayerPoint(d.source.coords).x)
                 .attr("y1", d => map.latLngToLayerPoint(d.source.coords).y)
                 .attr("x2", d => map.latLngToLayerPoint(d.target.coords).x)
                 .attr("y2", d => map.latLngToLayerPoint(d.target.coords).y);
-
+        
             node.attr("cx", d => map.latLngToLayerPoint(d.coords).x)
                 .attr("cy", d => map.latLngToLayerPoint(d.coords).y);
-
+        
             text.attr("x", d => map.latLngToLayerPoint(d.coords).x)
                 .attr("y", d => map.latLngToLayerPoint(d.coords).y);
-
+        
             if (selectedPath.length > 0 && selectedPath.length < 7) {
                 const selectedNode = nodes.find(n => n.name === selectedPath[selectedPath.length - 1]);
                 const nextLinks = links.filter(link => link.source === selectedNode && graphData[selectedNode.name].next.includes(link.target.name));
-
+        
                 svg.selectAll("line.next-line").remove();
-
+        
                 const nextLink = svg.selectAll("line.next-line")
                     .data(nextLinks)
                     .enter().append("line")
                     .attr("class", "next-line");
-
+        
                 nextLink.attr("x1", d => map.latLngToLayerPoint(d.source.coords).x)
                     .attr("y1", d => map.latLngToLayerPoint(d.source.coords).y)
                     .attr("x2", d => map.latLngToLayerPoint(d.target.coords).x)
                     .attr("y2", d => map.latLngToLayerPoint(d.target.coords).y);
             }
-            
+        
             if (selectedLine) {
                 const selectedCoords = selectedPath.map(nodeName => {
                     const selectedNode = nodes.find(n => n.name === nodeName);
@@ -230,7 +245,7 @@ function initMap() {
                     .y(d => d.y);
                 selectedLine.attr("d", lineGenerator(selectedCoords));
             }
-
+        
             // Add event listener for zoomend event
             map.on("zoomend", update);
             map.on("move", update);
@@ -240,6 +255,7 @@ function initMap() {
 
     function updateDetails(selectedNodes, graphData) {
         const detailsDiv = document.getElementById('details');
+        const totalsDiv = document.getElementById('totals');
         detailsDiv.innerHTML = '';
         
         let counter = 1;
@@ -253,7 +269,7 @@ function initMap() {
             const lastNodeName = selectedPath[selectedPath.indexOf(nodeName) - 1];
             const distance = lastNodeName ? calculateDistance(node.coords, graphData[lastNodeName].coords) : 0;
             const time = distance / 5; // 5 knots
-
+            
             const detailsHeading1 = document.createElement('h3');
             const detailsHeading2 = document.createElement('h4');
             detailsHeading1.textContent = `Day ${counter} ${nodeName}`;
@@ -290,18 +306,18 @@ function initMap() {
             const totalHeading = document.createElement('h3');
             totalHeading.textContent = `Total Distance: ${totalDistance.toFixed(2)} NM - Total Sailing Time: ~${totalTime.toFixed(2)} hours`;
 
-            // If the totalHeading is already in the detailsDiv, remove it and add it again at the top
-            if (detailsDiv.firstChild.textContent.includes('Total Distance')) {
-                detailsDiv.removeChild(detailsDiv.firstChild);
-            }          
+            // If the totalsDiv already has the totalHeading, remove it and add it again
+            if (totalsDiv.lastChild.textContent.includes('Total Distance')) {
+                totalsDiv.removeChild(totalsDiv.lastChild);
+            }
 
-            detailsDiv.prepend(totalHeading);
+            totalsDiv.appendChild(totalHeading);
             
             counter++;
         });
     }
 
-    updateMap(graphData, nodes, links, svg, map, selectedPath);
+    updateMap(graphData, nodes, links, svg, map, tempSelectedPath);
 }
 
 // Call the initMap function once the Leaflet library is loaded

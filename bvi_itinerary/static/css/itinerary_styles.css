@@ -14,13 +14,26 @@ body {
     flex: 1;
 }
 
-#details {
+#text-container {
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    overflow-y: scroll;
+}
+
+#totals {
     box-sizing: border-box;
     padding: 10px;
     width: 100%;
 }
+
+#details {
+    flex: 1;
+    overflow-y: auto; /* Enable scrolling */
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+
 
 @media only screen and (max-width: 768px) {
     #map-container {
@@ -28,9 +41,17 @@ body {
         width: 100%;
     }
 
+    #text-container {
+        height: 50%; /* Ensure text-container takes full height */
+    }
+
     #details {
-        height: 100vh;
-        overflow-y: scroll;
+        height: 100%; /* Ensure details takes full height */
+        overflow-y: auto; /* Enable scrolling */
+    }
+
+    #totals {
+        align-items: flex-start;
     }
 }
 

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 import json
 import os
 
@@ -9,12 +9,9 @@ DATA_PATH = os.path.join(
 with open(DATA_PATH) as f:    
     MAP_DATA = json.load(f)
 
-def itinerary(request, **kwargs):
+def index(request, **kwargs):
     
     context = kwargs
     context['map_data'] = json.dumps(MAP_DATA)
     
     return render(request, 'bvi_itinerary.html', context=context)
-
-def index(request):
-    return redirect("bvi-itinerary")
