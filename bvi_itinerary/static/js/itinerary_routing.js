@@ -25,7 +25,7 @@ function calculateDistance(coord1, coord2) {
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
-    return distance.toFixed(2);
+    return distance.toFixed(1);
 }
 
 // Function to initialize the Leaflet Map
@@ -44,8 +44,9 @@ function initMap() {
     const nodeCoords = Object.keys(graphData).map(nodeName => graphData[nodeName].coords);
     const bounds = L.latLngBounds(nodeCoords);
 
-    // Calculate the center based on the bounds
-    const center = bounds.getCenter();
+    // Calculate the center based on the bounds and shift up by 0.05 degrees
+    const center = bounds.getCenter().wrap();
+    center.lat += 0.05;
 
     // Create a new Leaflet map instance, center the map and zoom so that all nodes are visible
     map = L.map('map').setView(center, 10);
@@ -196,10 +197,10 @@ function initMap() {
     function updateMap(graphData, nodes, links, svg, map, selectedPath) {
 
         // Draw dotted links
-        const link = svg.selectAll("line.dotted-line")
-            .data(links)
-            .enter().append("line")
-            .attr("class", "dotted-line");
+        // const link = svg.selectAll("line.dotted-line")
+        //     .data(links)
+        //     .enter().append("line")
+        //     .attr("class", "dotted-line");
 
         // Draw nodes
         const node = svg.selectAll("circle")
@@ -223,17 +224,19 @@ function initMap() {
         node.on("click", clickNode);
 
         function update() {
-                link.attr("x1", d => map.latLngToLayerPoint(d.source.coords).x)
-                .attr("y1", d => map.latLngToLayerPoint(d.source.coords).y)
-                .attr("x2", d => map.latLngToLayerPoint(d.target.coords).x)
-                .attr("y2", d => map.latLngToLayerPoint(d.target.coords).y);
+            console.log("Replotting map...");
+            // link.attr("x1", d => map.latLngToLayerPoint(d.source.coords).x)
+            //     .attr("y1", d => map.latLngToLayerPoint(d.source.coords).y)
+            //     .attr("x2", d => map.latLngToLayerPoint(d.target.coords).x)
+            //     .attr("y2", d => map.latLngToLayerPoint(d.target.coords).y);
         
             node.attr("cx", d => map.latLngToLayerPoint(d.coords).x)
                 .attr("cy", d => map.latLngToLayerPoint(d.coords).y);
         
             text.attr("x", d => map.latLngToLayerPoint(d.coords).x)
                 .attr("y", d => map.latLngToLayerPoint(d.coords).y);
-        
+
+            // Update nextLinks based on the newly selected node
             if (selectedPath.length > 0 && selectedPath.length < 7) {
                 const selectedNode = nodes.find(n => n.name === selectedPath[selectedPath.length - 1]);
                 const nextLinks = links.filter(link => link.source === selectedNode && graphData[selectedNode.name].next.includes(link.target.name));
@@ -264,7 +267,6 @@ function initMap() {
         
             // Add event listener for zoomend event
             map.on("zoomend", update);
-            map.on("move", update);
         }
         update();
     }
@@ -282,13 +284,14 @@ function initMap() {
 
             const anchorages = node.anchorages || [];
             const lastNodeName = selectedPath[selectedPath.indexOf(nodeName) - 1];
+
             const distance = lastNodeName ? calculateDistance(node.coords, graphData[lastNodeName].coords) : 0;
             const time = distance / 5; // 5 knots
             
             const detailsHeading1 = document.createElement('h3');
             const detailsHeading2 = document.createElement('h4');
             detailsHeading1.textContent = `Day ${counter} ${nodeName}`;
-            detailsHeading2.textContent = `Distance: ~${distance} NM - Sailing Time: ~${time.toFixed(2)} hours`;
+            detailsHeading2.textContent = `Distance: ~${distance} NM - Sailing Time: ~${time.toFixed(1)} hours`;
             detailsDiv.appendChild(detailsHeading1);
             detailsDiv.appendChild(detailsHeading2);
             
@@ -319,7 +322,7 @@ function initMap() {
             }, 0);
             const totalTime = totalDistance / 5;
             const totalHeading = document.createElement('h3');
-            totalHeading.textContent = `Total Distance: ${totalDistance.toFixed(2)} NM - Total Sailing Time: ~${totalTime.toFixed(2)} hours`;
+            totalHeading.textContent = `Total Distance: ${totalDistance.toFixed(1)} NM - Total Sailing Time: ~${totalTime.toFixed(1)} hours`;
 
             // Check if totalsDiv is empty or if the last child is the totalHeading
             if (totalsDiv.childElementCount === 0 || totalsDiv.lastChild.textContent !== totalHeading.textContent) {

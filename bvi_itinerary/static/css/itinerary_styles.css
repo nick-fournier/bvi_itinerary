@@ -35,7 +35,8 @@ body {
 }
 
 
-@media only screen and (max-width: 1024px) {
+/* switch to vertical when taller than wide */
+@media screen and (max-aspect-ratio: 1/1) {
     #map-container {
         flex-direction: column;
         width: 100%;
@@ -48,7 +49,7 @@ body {
     #details {
         height: 100%; /* Ensure details takes full height */
         overflow-y: auto; /* Enable scrolling */
-        margin-bottom: 18px;
+        padding-bottom: 10px;
     }
 
     #totals {
