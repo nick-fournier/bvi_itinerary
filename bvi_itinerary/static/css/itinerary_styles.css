@@ -22,7 +22,7 @@ body {
 
 #totals {
     box-sizing: border-box;
-    padding: 10px;
+    padding: 4px;
     width: 100%;
 }
 
@@ -48,6 +48,7 @@ body {
     #details {
         height: 100%; /* Ensure details takes full height */
         overflow-y: auto; /* Enable scrolling */
+        margin-bottom: 10px;
     }
 
     #totals {
