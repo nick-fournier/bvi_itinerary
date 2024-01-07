@@ -1,0 +1,6 @@
+include LICENSE
+include README.md
+recursive-include bvi_itinerary/fixtures *
+recursive-include bvi_itinerary/static *
+recursive-include bvi_itinerary/templates *
+recursive-include docs *
