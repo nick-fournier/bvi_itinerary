@@ -51,6 +51,15 @@ function initMap() {
     let selectedNodes = new Set();
     let selectedLine;
 
+    // Get the details and totals divs
+    const detailsDiv = document.getElementById('details');
+    const totalsDiv = document.getElementById('totals');
+
+    // Display instructions on how to use the map
+    totalsDiv.innerHTML = `<h3>Instructions:</h3>`;
+    detailsDiv.innerHTML = `<p>Click on the dots on the map in the order you want to add them to the itinerary starting with the "Base" point in red. The red lines display your next possible destinations. Click on the dots again to remove them from the itinerary.</p><p>The zoom is a little clunky and sometimes wont display nodes... just zoom in and out a few times and it should work.</p>`;
+
+
     // Always display an arrow on the top right corner of the map
     // at an angle of 135 degrees = 225 degrees - 90 degrees (due to the image being rotated 90 degrees)
     // Scale the arrow image to 75px
@@ -254,9 +263,8 @@ function initMap() {
     }
 
     function updateDetails(selectedNodes, graphData) {
-        const detailsDiv = document.getElementById('details');
-        const totalsDiv = document.getElementById('totals');
         detailsDiv.innerHTML = '';
+        totalsDiv.innerHTML = '';
         
         let counter = 1;
         selectedNodes.forEach(nodeName => {
@@ -306,13 +314,13 @@ function initMap() {
             const totalHeading = document.createElement('h3');
             totalHeading.textContent = `Total Distance: ${totalDistance.toFixed(2)} NM - Total Sailing Time: ~${totalTime.toFixed(2)} hours`;
 
-            // If the totalsDiv already has the totalHeading, remove it and add it again
-            if (totalsDiv.lastChild.textContent.includes('Total Distance')) {
-                totalsDiv.removeChild(totalsDiv.lastChild);
+            // Check if totalsDiv is empty or if the last child is the totalHeading
+            if (totalsDiv.childElementCount === 0 || totalsDiv.lastChild.textContent !== totalHeading.textContent) {
+                totalsDiv.appendChild(totalHeading);
+            } else {
+                totalsDiv.lastChild.textContent = totalHeading.textContent;
             }
 
-            totalsDiv.appendChild(totalHeading);
-            
             counter++;
         });
     }
