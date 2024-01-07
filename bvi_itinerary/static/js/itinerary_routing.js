@@ -40,8 +40,15 @@ function initMap() {
         map.remove();
     }
 
+    // Calculate the view bounds of the map based on the nodes so that all nodes are visible
+    const nodeCoords = Object.keys(graphData).map(nodeName => graphData[nodeName].coords);
+    const bounds = L.latLngBounds(nodeCoords);
+
+    // Calculate the center based on the bounds
+    const center = bounds.getCenter();
+
     // Create a new Leaflet map instance, center the map and zoom so that all nodes are visible
-    map = L.map('map').setView([18.44730228957937, -64.53116191909692], 10);
+    map = L.map('map').setView(center, 10);
 
     // Add a base layer to the map
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
