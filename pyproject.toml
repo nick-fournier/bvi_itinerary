@@ -1,11 +1,15 @@
-[project]
-name = "bvi_itinerary"
+[tool.poetry]
+name = "bvi-itinerary"
 version = "0.1.0"
-description = "An interactive bareboat itinerary in the BVIs."
-authors = [
-    { name = "Nicholas Fournier" }
-]
+description = "Itinerary planner for sailing BVI"
+authors = ["Nick Fournier <nichfournier@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.6"
+
 
 [build-system]
-requires = ['setuptools>=61.0', 'wheel']
-build-backend = 'setuptools.build_meta:__legacy__'
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
