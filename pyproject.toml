@@ -1,15 +1,19 @@
-[tool.poetry]
+[project]
 name = "bvi-itinerary"
 version = "0.1.1"
-description = "Itinerary planner for sailing BVI"
-authors = ["Nick Fournier <nichfournier@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
+authors = [
+    { name = "nick-fournier", email = "nichfournier@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.1.5",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-django = "^4.2"
-
+[project.scripts]
+bvi-itinerary = "bvi_itinerary:main"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
