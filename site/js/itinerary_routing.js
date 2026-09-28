@@ -1,9 +1,6 @@
  
- // Itinerary JSON data
-const jsonString = JSON.parse(document.getElementById("map_data").textContent);
-
-// Parse the JSON string
-var graphData = JSON.parse(jsonString);
+ // Itinerary stops, loaded from data/stops.json before the map is initialised
+let graphData;
 
 let map; // Declare map variable at the beginning
 let selectedPath = [];
@@ -75,7 +72,7 @@ function initMap() {
     const arrow = L.control({position: 'topright'});
     arrow.onAdd = function (map) {
         const div = L.DomUtil.create('div', 'arrow');
-        div.innerHTML = '<img src="/static/images/arrow.png" style="transform: rotate(135deg); width: 75px; height: 75px;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-weight: bold;">WIND</div>';
+        div.innerHTML = '<img src="images/arrow.png" style="transform: rotate(135deg); width: 75px; height: 75px;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-weight: bold;">WIND</div>';
         return div;
     };
     arrow.addTo(map);
@@ -339,4 +336,7 @@ function initMap() {
 }
 
 // Call the initMap function once the Leaflet library is loaded
-window.onload = initMap;
+window.onload = async () => {
+    graphData = await fetchJSONFile('data/stops.json');
+    initMap();
+};
